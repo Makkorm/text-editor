@@ -1,0 +1,382 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, serif;
+}
+
+ul {
+   padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.clearfix:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.wrapper {
+    width: 98%;
+    margin: 50px auto;
+}
+/* FIRST BLOCK */
+.first_block {
+    width: 30%;
+	min-width: 450px;
+    float: left;
+    padding: 0 1%;
+}
+table {
+    border: 1px solid #222;
+    width: 100%;
+}
+td {
+    padding: 5px 10px;
+}
+
+ td i {
+     cursor: pointer;
+     position: relative;
+     z-index: 1;
+ }
+.td_coord {
+    text-align: center;
+}
+.td_coord p {
+    display: inline-block;
+    margin-left: 40px;
+}
+tr.border td {
+	border-bottom: 1px solid #222;
+	padding: 0;
+}
+span.x {
+    color: green;
+}
+span.y {
+    color: blue;
+}
+span.z {
+    color: darkviolet;
+}
+
+ td i.show {
+     display: block;
+ }
+td i.hide {
+    display: none;
+}
+ td.edit {
+     position: relative;
+ }
+
+.box {
+    position: relative;
+    margin-top: 10px;
+}
+.box a {
+    color: #222;
+}
+
+/* tooltip editing*/
+.t_editing {
+    padding: 4px 8px;
+    border: 1px solid #222;
+    border-radius: 3px;
+    background: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    left: -25px;
+    z-index: 99;
+
+    display: none;
+}
+
+td.text {
+    position: relative;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+td.text p {
+    padding: 8px;
+    margin: 0;
+    border: 1px solid transparent;
+}
+td.text p[contenteditable = "true"] {
+    border: 1px solid #222;
+    outline: none;
+}
+td.text p a {
+
+}
+p#editor {
+    padding-bottom: 20px;
+}
+td.text div.form {
+    padding: 5px 10px;
+    border: 1px solid #222;
+    background: #fff;
+    position: absolute;
+    bottom: -10px;
+    right: 100px;
+
+    display: none;
+}
+td.text form label.font_style {
+    margin-right: 10px;
+}
+td.text form label.font_style > input {
+    display: none;
+}
+
+/* блок под основной таблицей с новым iframe */
+
+.wrap {
+	position: relative;
+	overflow: hidden;
+    min-height: 160px;
+}
+.addText {
+    margin-top: 20px;
+    border: 1px solid #222;
+    padding: 8px;
+    width: 100%;
+}
+.addText form {
+    display: inline-block;
+}
+.newText {
+    width: 100%;
+    min-height: 150px;
+    outline: none;
+    float: left;
+	border: 1px solid #222;
+	padding: 10px;
+
+	
+	transition: width linear 0.1s;
+}
+.iframe_active {
+	width: 75%;
+	
+	transition: width linear 0.1s;
+}
+
+/* выезжающая кнопка*/
+.replacement {
+	position: absolute;
+	top : 0;
+	right: -400px;
+    width: 20%;
+    min-height: 150px;
+	padding: 8px 4px;
+	background: #222;
+	opacity: .8;
+    z-index: 1;
+	
+	transition:  right linear 0.1s;;
+}
+.repl_active {
+	width: 25%;
+	top: 0;
+	right: 0;
+	
+	transition:  right linear 0.1s;
+}
+.replacement a {
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 40px;
+	display: block;
+	padding: 5px 3px;
+	text-align: center;
+	color: #c7c7c7;
+	border: 1px solid #525252;
+	border-radius: 3px;
+}
+.replacement a:hover {
+	color: #fff;
+	border: 1px solid #c7c7c7;
+}
+.replacement a.repl_a_text {
+	display: none;
+}
+
+
+.addText_button {
+    float: right;
+    margin-right: 5px;
+    font-size: 12px;
+    padding: 3px 5px;
+    background: #222;
+    color: #fff;
+    outline: none;
+}
+
+/* поля ввода координат */
+
+.coordinates {
+	min-height: 150px;
+    border: 1px solid #222;
+    width: 100%;
+
+    position: absolute;
+    top: 200px;
+	
+	transition: top linear 0.1s;
+}
+.coord_active {
+	top: 0;
+	
+	transition: top linear 0.1s;
+}
+.coordinates form {
+	width: 70%;
+}
+.coordinates div {
+    position: relative;
+    overflow: hidden;
+    margin-top: 6px;
+    padding-left: 20px;
+}
+.coordinates label {
+    color: #747474;
+
+    position: absolute;
+    left: 10px;
+    top: 10px;
+
+    transition: left linear 0.1s;
+}
+.coordinates  input{
+    height: 40px;
+    padding: 4px 8px;
+    position: relative;
+    font-size: 16px;
+    color: #222;
+    text-align: right;
+    outline: none;
+	margin-left: 10px;
+	width: 130px;
+	
+}
+
+.coordinates input:focus {
+    border: 1px solid #222;
+    text-align: left;
+    padding-right: 45px;
+}
+
+::-webkit-input-placeholder {
+    color:#c0392b;
+    text-align: left;
+}
+::-moz-placeholder {/* Firefox 19+ */
+    color:#c0392b;
+    text-align: left;
+    padding-left: 35px;
+}
+:-moz-placeholder {/* Firefox 18- */
+    color:#c0392b;
+    text-align: left;
+    padding-left: 35px;
+}
+:-ms-input-placeholder {
+    color:#c0392b;
+    text-align: left;
+    padding-left: 35px;
+}
+
+.coordinates input:focus+label {
+    left: 120px;
+    top: 0;
+    background: #222;
+    opacity: 0.8;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 18px;
+	padding-left: 14px;
+
+    transition: left linear 0.1s;
+}
+
+.number,.value {
+	color: red;
+	position: absolute;
+    font-size: 13px;
+	
+	top: -5px;
+	left: 60%;
+	display: none;
+}
+
+
+/* second block*/
+.second_block {
+    width: 20%;
+    min-width: 350px;
+    float: left;
+}
+
+.table_coord {
+    text-align: center;
+}
+.table_coord thead {
+    color: #222;
+    font-weight: bold;
+}
+.table_coord thead td {
+    padding: 15px;
+}
+.table_coord thead tr.border td {
+    padding: 0;
+}
+.table_coord tbody {
+    border: 1px solid #222;
+}
+
+
+/* third block*/
+.third_block {
+	width: 40%;
+	min-width: 400px;
+	float: left;
+    margin-left: 1%;
+}
+
+.accord_wrap {
+	border: 1px solid #222;
+}
+.accord_wrap li a {
+	display: block;
+	background: #fff;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	color: #222;
+	font-size: 18px;
+	border-bottom: 1px solid #e8e8e8;
+}
+/*.accord_wrap li a:focus {*/
+	/*background: #616161;*/
+	/*outline: none;*/
+    /*color: #fff;*/
+/*}*/
+.accord_wrap li div {
+	display: none;
+    background: rgba(97, 97, 97, 0.18);
+}
+.accord_wrap li p {
+	padding: 10px;
+    color: #222;
+    margin: 0;
+}

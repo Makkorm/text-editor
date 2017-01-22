@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add text</title>
+    <link rel="stylesheet" href="style/main.css"/>
+    <link rel="stylesheet" href="style/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="wrapper clearfix">
+        <div class="first_block">
+            <table id="table">
+                <tr>
+                    <td class="edit">
+                        <div class="box">
+                            <a href="#" title="Редактировать"><i class="fa fa-plus-square show i_edit"></i></a>
+                        </div>
+                        <div class="box">
+                            <a href="#" title="Сохранить"><i class="fa fa-floppy-o hide i_save"></i></a>
+                        </div>
+                        <div class="box">
+                            <a href="#" title="Отмена"><i class="fa fa-ban hide i_stop"></i></a>
+                        </div>
+                    </td>
+                    <td class="text">
+                       <p>
+                           Lorem Ipsum - это текст-"рыба", http://player.radioultra.ru/#ultra часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов
+                       </p>
+                        <div class="form">
+                            <input type="button" name="bold" value="B" />
+                            <input type="button" name="italic" value="I" />
+                            <input type="button" name="underline" value="U" />
+                            <select name="fonts" title="Шрифт" class="fonts">
+                                <option value="Arial">Arial</option>
+                                <option value="Tahoma">Tahoma</option>
+                                <option value="Georgia">Georgia</option>
+                                <option value="Sans Serif">Sans Serif</option>
+                            </select>
+                            <select name="font_size" title="размер шрифта" class="font_size">
+                                <option value="14px">14</option>
+                                <option value="16px">16</option>
+                                <option value="22px">22</option>
+                                <option value="26px">26</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="edit">
+                        <div class="box">
+                            <a href="#" title="Редактировать"><i class="fa fa-plus-square show i_edit"></i></a>
+                        </div>
+                        <div class="box">
+                            <a href="#" title="Сохранить"><i class="fa fa-floppy-o hide i_save"></i></a>
+                        </div>
+                        <div class="box">
+                            <a href="#" title="Отмена"><i class="fa fa-ban hide i_stop"></i></a>
+                        </div>
+                    </td>
+                    <td class="text">
+                        <p>
+                            Чтобы просто узнать есть ли в строке что либо соотвествующее шаблону,https://www.google.by/?gws_rd=ssl воспользуйтесь методами https://www.google.by/?gws_rd=ssl test или search; https://www.google.by/?gws_rd=ssl
+                        </p>
+                        <div class="form">
+                            <input type="button" name="bold" value="B" />
+                            <input type="button" name="italic" value="I" />
+                            <input type="button" name="underline" value="U" />
+                            <select name="fonts" title="Шрифт" class="fonts">
+                                <option value="Arial">Arial</option>
+                                <option value="Tahoma">Tahoma</option>
+                                <option value="Georgia">Georgia</option>
+                                <option value="Sans Serif">Sans Serif</option>
+                            </select>
+                            <select name="font_size" title="размер шрифта" class="font_size">
+                                <option value="14px">14</option>
+                                <option value="16px">16</option>
+                                <option value="22px">22</option>
+                                <option value="26px">26</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="addText" id="addText">
+                <div class="wrap clearfix">
+                    <div id="newText" class="newText" contenteditable="true"></div>
+                    <div class="replacement" id="replacement">
+                        <a href="#" id="repl_a">Ввести координаты</a>
+						<a href="#" id="repl_a_text" class="repl_a_text">Ввести текст</a>
+                    </div>
+					<div class="coordinates" id="coordinates">
+						<form id="f_coord">
+                            <div>
+                                <input type="text" name="x" id="x" />
+                                <label for="x">X</label>
+								<p class="number">Только число</p>
+								<p class="value">Введите значение</p>
+                            </div>
+							<div>
+                                <input type="text" name="y" id="y" />
+                                <label for="y">Y</label>
+								<p class="number">Только число</p>
+								<p class="value">Введите значение</p>
+                            </div>
+							<div>
+                                <input type="text" name="z" id="z" />
+                                <label for="z">Z</label>
+								<p class="number">Только число</p>
+								<p class="value">Введите значение</p>
+                            </div>
+						</form>
+					</div>
+                </div>
+                <input type="button" value="Insert into table" name="addToTable" class="addText_button" id="addText_button" />
+                <div class="form">
+                    <input type="button" name="bold" value="B" />
+                    <input type="button" name="italic" value="I" />
+                    <input type="button" name="underline" value="U" />
+                    <select name="fonts" title="Шрифт" class="fonts">
+                        <option value="Arial">Arial</option>
+                        <option value="Tahoma">Tahoma</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Sans Serif">Sans Serif</option>
+                    </select>
+                    <select name="font_size" title="размер шрифта" class="font_size">
+                        <option value="14px">14</option>
+                        <option value="16px">16</option>
+                        <option value="22px">22</option>
+                        <option value="26px">26</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="second_block">
+            <table id="table_coord" class="table_coord">
+                <thead>
+                    <tr>
+                        <td>X</td>
+                        <td>Y</td>
+                        <td>Z</td>
+                    </tr>
+					<tr class="border">
+						<td colspan="3"></td>
+					</tr>
+                </thead>
+                <tr>
+                    <td class="x">
+                        <p>0</p>
+                    </td>
+                    <td class="y">
+                        <p>0</p>
+                    </td>
+                    <td class="z">
+                        <p>0</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+		<div class="third_block">
+			<ul class="accord_wrap" id="accord_wrap">
+				<li>
+					<a href="#" class="click">header 1</a>
+					<div class="content">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+					</div>
+				</li>
+				<li>
+					<a href="#" class="click">header 2</a>
+					<div class="content">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+					</div>
+				</li>
+				<li>
+					<a href="#" class="click">header 3</a>
+					<div class="content">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/replaceInputs.js"></script>
+    <script src="js/accordion.js"></script>
+</body>
+</html>
